@@ -19,6 +19,7 @@ class CreateHotelesTable extends Migration
             $table->string('DireccionHotel', 255);
             $table->string('CiudadHotel', 255);
             $table->string('TelefonoHotel', 30);
+            $table->string('FotoHotel', 255);
             $table->integer('PlazasHotel');
         });
     }

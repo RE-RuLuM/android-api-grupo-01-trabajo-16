@@ -31,7 +31,7 @@ class SucursalController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -39,6 +39,8 @@ class SucursalController extends Controller
 
         $sucursal->DireccionSucursal = $request->input('DireccionSucursal');
         $sucursal->TelefonoSucursal = $request->input('TelefonoSucursal');
+        $sucursal->LatitudSucursal = $request->input('LatitudSucursal');
+        $sucursal->AltitudSucursal = $request->input('AltitudSucursal');
 
         $sucursal->save();
 

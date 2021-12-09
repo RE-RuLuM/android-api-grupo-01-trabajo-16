@@ -15,7 +15,9 @@ class SucursalFactory extends Factory
     {
         return [
             'DireccionSucursal' => $this->faker->address(),
-            'TelefonoSucursal' => $this->faker->phoneNumber()
+            'TelefonoSucursal' => $this->faker->phoneNumber(),
+            'LatitudSucursal' => $this->faker->numberBetween(-100, 100),
+            'AltitudSucursal' => $this->faker->numberBetween(-100, 100),
         ];
     }
 }
