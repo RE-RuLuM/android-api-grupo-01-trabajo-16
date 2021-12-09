@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sucursal;
 use Illuminate\Http\Request;
 
 class SucursalController extends Controller
@@ -13,7 +14,7 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Sucursal::all());
     }
 
     /**
@@ -34,7 +35,14 @@ class SucursalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sucursal = new Sucursal();
+
+        $sucursal->DireccionSucursal = $request->input('DireccionSucursal');
+        $sucursal->TelefonoSucursal = $request->input('TelefonoSucursal');
+
+        $sucursal->save();
+
+        return response()->json($sucursal);
     }
 
     /**
@@ -45,7 +53,9 @@ class SucursalController extends Controller
      */
     public function show($id)
     {
-        //
+        $sucursal = Sucursal::find($id);
+
+        return response()->json($sucursal);
     }
 
     /**
@@ -68,7 +78,14 @@ class SucursalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sucursal = new Sucursal();
+
+        $sucursal->DireccionSucursal = $request->input('DireccionSucursal');
+        $sucursal->TelefonoSucursal = $request->input('TelefonoSucursal');
+
+        $sucursal->save();
+
+        return response()->json($sucursal);
     }
 
     /**
@@ -79,6 +96,10 @@ class SucursalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sucursal = Sucursal::find($id);
+
+        $sucursal->delete();
+
+        return response()->json($sucursal);
     }
 }

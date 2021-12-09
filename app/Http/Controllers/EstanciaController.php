@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estancia;
 use Illuminate\Http\Request;
 
 class EstanciaController extends Controller
@@ -13,7 +14,7 @@ class EstanciaController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Estancia::all());
     }
 
     /**
@@ -34,7 +35,16 @@ class EstanciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estancia = new Estancia();
+
+        $estancia->Pension = $request->input('Pension');
+        $estancia->FechaEntrada = $request->input('FechaEntrada');
+        $estancia->FechaSalida = $request->input('FechaSalida');
+        $estancia->Codigoestancia = $request->input('CodigoHotel');
+
+        $estancia->save();
+
+        return response()->json($estancia);
     }
 
     /**
@@ -45,7 +55,9 @@ class EstanciaController extends Controller
      */
     public function show($id)
     {
-        //
+        $estancia = Estancia::find($id);
+
+        return response()->json($estancia);
     }
 
     /**
@@ -68,7 +80,16 @@ class EstanciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $estancia = Estancia::find($id);
+
+        $estancia->Pension = $request->input('Pension');
+        $estancia->FechaEntrada = $request->input('FechaEntrada');
+        $estancia->FechaSalida = $request->input('FechaSalida');
+        $estancia->Codigoestancia = $request->input('CodigoHotel');
+
+        $estancia->save();
+
+        return response()->json($estancia);
     }
 
     /**
@@ -79,6 +100,10 @@ class EstanciaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $estancia = Estancia::find($id);
+
+        $estancia->delete();
+
+        return response()->json($estancia);
     }
 }
