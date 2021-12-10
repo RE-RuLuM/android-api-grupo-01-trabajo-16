@@ -17,8 +17,8 @@ class CreateSucursalesTable extends Migration
             $table->id('CodigoSucursal');
             $table->string('DireccionSucursal', 255);
             $table->string('TelefonoSucursal', 30);
-            $table->integer('LatitudSucursal');
-            $table->integer('AltitudSucursal');
+            $table->double('LatitudSucursal');
+            $table->double('LongitudSucursal');
         });
     }
 

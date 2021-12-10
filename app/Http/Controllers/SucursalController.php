@@ -40,7 +40,7 @@ class SucursalController extends Controller
         $sucursal->DireccionSucursal = $request->input('DireccionSucursal');
         $sucursal->TelefonoSucursal = $request->input('TelefonoSucursal');
         $sucursal->LatitudSucursal = $request->input('LatitudSucursal');
-        $sucursal->AltitudSucursal = $request->input('AltitudSucursal');
+        $sucursal->LongitudSucursal = $request->input('LongitudSucursal');
 
         $sucursal->save();
 
@@ -84,6 +84,8 @@ class SucursalController extends Controller
 
         $sucursal->DireccionSucursal = $request->input('DireccionSucursal');
         $sucursal->TelefonoSucursal = $request->input('TelefonoSucursal');
+        $sucursal->LatitudSucursal = $request->input('LatitudSucursal');
+        $sucursal->LongitudSucursal = $request->input('LongitudSucursal');
 
         $sucursal->save();
 

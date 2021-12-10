@@ -17,7 +17,7 @@ class SucursalFactory extends Factory
             'DireccionSucursal' => $this->faker->address(),
             'TelefonoSucursal' => $this->faker->phoneNumber(),
             'LatitudSucursal' => $this->faker->numberBetween(-100, 100),
-            'AltitudSucursal' => $this->faker->numberBetween(-100, 100),
+            'LongitudSucursal' => $this->faker->numberBetween(-100, 100),
         ];
     }
 }

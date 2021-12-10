@@ -89,6 +89,7 @@ class HotelController extends Controller
         $hotel->CiudadHotel = $request->input('CiudadHotel');
         $hotel->TelefonoHotel = $request->input('TelefonoHotel');
         $hotel->PlazasHotel = $request->input('PlazasHotel');
+        $hotel->FotoHotel = $request->input('FotoHotel');
 
         $hotel->save();
 

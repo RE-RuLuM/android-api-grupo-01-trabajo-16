@@ -19,7 +19,7 @@ class HotelFactory extends Factory
             'CiudadHotel' => $this->faker->city(),
             'TelefonoHotel' => $this->faker->numerify('#########'),
             'PlazasHotel' => $this->faker->numberBetween(30, 50),
-            'FotoHotel' => $this->faker->filePath(),
+            'FotoHotel' => 'ruta/de/tu/foto',
         ];
     }
 }
